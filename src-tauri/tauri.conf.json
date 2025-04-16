@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "notary",
+  "version": "0.1.0",
+  "identifier": "com.notary.app",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://192.168.211.213:32412/",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "notary",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "capabilities": [
+        {
+          "identifier": "my-capability",
+          "description": "My application capability used for all windows",
+          "windows": ["*"],
+          "remote": {
+            "urls": ["http://192.168.211.213:32412/"]
+          },
+          "permissions": ["core:window:allow-set-size"]
+        }
+      ]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
