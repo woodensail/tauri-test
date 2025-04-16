@@ -4,10 +4,7 @@
   "version": "0.1.0",
   "identifier": "com.notary.app",
   "build": {
-    "beforeDevCommand": "npm run dev",
-    "devUrl": "http://192.168.211.213:32412/",
-    "beforeBuildCommand": "npm run build",
-    "frontendDist": "../dist"
+    "frontendDist": "http://192.168.211.213:32412/"
   },
   "app": {
     "withGlobalTauri": true,
